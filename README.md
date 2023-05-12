@@ -4,6 +4,9 @@ zk circuit implementation
 
 ## Description
 
+![Assessment_b05f6ed658](https://github.com/saikrishna01-jpg/polygon-zkEVM/assets/85012804/009ad8f5-8b4a-473c-bf73-17514cf18b02)
+
+
 zk circuit implementation using circom language and deploying on goerli chain to verify the proof 
 
 ## Getting Started
