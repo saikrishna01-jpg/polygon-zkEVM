@@ -1,40 +1,32 @@
 # Hello World
 
-This Solidity program is a simple "Hello World" program that demonstrates the basic syntax and functionality of the Solidity programming language. The purpose of this program is to serve as a starting point for those who are new to Solidity and want to get a feel for how it works.
+zk circuit implementation
 
 ## Description
 
-This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has a single function that returns the string "Hello World!". This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
+zk circuit implementation using circom language and deploying on goerli chain to verify the proof 
 
 ## Getting Started
+The project uses cirocom which requires rust environment which can be run on a wsl. 
 
 ### Executing program
+circum code is first written implementing the logic gate with the help of templates from the 'circumlib' library. 
 
-To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
+then the code is compiled generating r1cs file and wasm file. 
 
-Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the following code into the file:
+we compute the witness from the wasm file. 
 
-```javascript
-pragma solidity ^0.8.4;
+Snarkjs is used to generate and validate proofs of witnesses. 
+powers of tau ceremenoy is done. 
+zkey is generated. 
+proof is generated using zkey and witness output will be public input and output of the circuit
+Verifying the proof requires a verification key, generated from the zkey, the proof, and the public inputs/output.
 
-contract HelloWorld {
-    function sayHello() public pure returns (string memory) {
-        return "Hello World!";
-    }
-}
+a verifier.sol file is generated which is deployed on the chain. 
 
-```
+after deploying, The inputs can be retrieved from the command: snarkjs generatecall
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
-
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "HelloWorld" contract from the dropdown menu, and then click on the "Deploy" button.
-
-Once the contract is deployed, you can interact with it by calling the sayHello function. Click on the "HelloWorld" contract in the left-hand sidebar, and then click on the "sayHello" function. Finally, click on the "transact" button to execute the function and retrieve the "Hello World!" message.
-
-## Authors
-
-Metacrafter Chris  
-[@metacraftersio](https://twitter.com/metacraftersio)
+it should return true. 
 
 
 ## License
