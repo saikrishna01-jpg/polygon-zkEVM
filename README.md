@@ -7,10 +7,10 @@ zk circuit implementation
 zk circuit implementation using circom language and deploying on goerli chain to verify the proof 
 
 ## Getting Started
-The project uses cirocom which requires rust environment which can be run on a wsl. 
+The project uses circom which requires rust environment which can be run on a wsl. 
 
 ### Executing program
-circum code is first written implementing the logic gate with the help of templates from the 'circumlib' library. 
+circom code is first written implementing the logic gate with the help of templates from the 'circomlib' library. 
 
 then the code is compiled generating r1cs file and wasm file. 
 
